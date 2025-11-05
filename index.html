@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Invoice Generator</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-gradient-to-r from-slate-800 via-slate-900 to-slate-950 text-white p-6">
+  <div class="max-w-4xl mx-auto bg-white/10 p-6 rounded-lg shadow-lg">
+    <h1 class="text-3xl font-bold mb-6 text-center">Invoice Generator</h1>
+
+    <!-- Client Info -->
+    <section class="mb-6">
+      <h2 class="text-xl font-semibold mb-2">Client Information</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <input type="text" id="client-name" placeholder="Client Name" class="p-2 rounded bg-white/10 text-white placeholder-white/70" />
+        <input type="text" id="client-address" placeholder="Client Address" class="p-2 rounded bg-white/10 text-white placeholder-white/70" />
+      </div>
+    </section>
+
+    <!-- Item List -->
+    <section class="mb-6">
+      <h2 class="text-xl font-semibold mb-2">Invoice Items</h2>
+      <div class="grid grid-cols-4 gap-2 mb-4">
+        <input type="text" id="item-name" placeholder="Item" class="p-2 rounded bg-white/10 text-white placeholder-white/70" />
+        <input type="number" id="item-qty" placeholder="Qty" class="p-2 rounded bg-white/10 text-white placeholder-white/70" />
+        <input type="number" id="item-price" placeholder="Price" class="p-2 rounded bg-white/10 text-white placeholder-white/70" />
+        <button id="add-item" class="bg-cyan-500 hover:bg-cyan-600 text-white font-bold rounded">Add</button>
+      </div>
+
+      <table class="w-full text-left bg-white/10 rounded overflow-hidden">
+        <thead class="bg-cyan-800 text-white">
+          <tr>
+            <th class="p-2">Item</th>
+            <th class="p-2">Qty</th>
+            <th class="p-2">Price</th>
+            <th class="p-2">Total</th>
+          </tr>
+        </thead>
+        <tbody id="invoice-body" class="divide-y divide-white/20"></tbody>
+      </table>
+    </section>
+
+    <!-- Total -->
+    <section class="text-right text-xl font-bold">
+      Grand Total: <span id="grand-total">0.00</span> LKR
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
